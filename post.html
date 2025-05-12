@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Jole Blog</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Read this blog post on Jole Blog">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">Jole Blog</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="post-page">
+        <article class="full-post" id="post-content">
+            <!-- Post content will be loaded dynamically -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading post...</p>
+            </div>
+        </article>
+
+        <section class="comments-section">
+            <h2>Comments</h2>
+            <form id="comment-form" class="comment-form">
+                <div class="form-group">
+                    <label for="comment-name">Name</label>
+                    <input type="text" id="comment-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment-text">Comment</label>
+                    <textarea id="comment-text" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Post Comment</button>
+            </form>
+
+            <div class="comments-list" id="comments-container">
+                <!-- Comments will be loaded here -->
+            </div>
+        </section>
+
+        <section class="related-posts">
+            <h2>You Might Also Like</h2>
+            <div class="related-grid" id="related-container">
+                <!-- Related posts will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Jole Blog. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com/in/levis-rabah-8242a6304
+
+                " aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/levisrabah" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/posts.js"></script>
+    <script src="./js/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme toggle
+            if (window.blogUtils && blogUtils.setupThemeToggle) {
+                blogUtils.setupThemeToggle();
+            }
+
+            // Get post ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = parseInt(urlParams.get('id'));
+            
+            // Find the post
+            const post = blogPosts.find(p => p.id === postId);
+            const postContent = document.getElementById('post-content');
+            const relatedContainer = document.getElementById('related-container');
+            
+            if (post) {
+                // Display post content
+                postContent.innerHTML = `
+                    <div class="post-header">
+                        <h1>${post.title}</h1>
+                        <div class="post-meta">
+                            <span>Posted on <time datetime="${post.date}">${new Date(post.date).toLocaleDateString()}</time></span>
+                            <span class="tags">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</span>
+                        </div>
+                        <div class="featured-image" style="background-image: url('${post.image}')"></div>
+                    </div>
+                    <div class="post-body">
+                        <p>${post.content}</p>
+                    </div>
+                `;
+                
+                // Display related posts (exclude current post)
+                const relatedPosts = blogPosts
+                    .filter(p => p.id !== post.id)
+                    .slice(0, 3); // Show max 3 related posts
+                
+                if (relatedPosts.length > 0) {
+                    relatedPosts.forEach(relatedPost => {
+                        const postCard = blogUtils.createPostCard(relatedPost);
+                        relatedContainer.appendChild(postCard);
+                    });
+                } else {
+                    relatedContainer.innerHTML = '<p>No related posts found.</p>';
+                }
+            } else {
+                postContent.innerHTML = `
+                    <div class="post-not-found">
+                        <h2>Post Not Found</h2>
+                        <p>The requested post could not be found.</p>
+                        <a href="./index.html" class="btn-primary">Back to Home</a>
+                    </div>
+                `;
+                document.querySelector('.related-posts').style.display = 'none';
+            }
+
+            // Comment form handling
+            const commentForm = document.getElementById('comment-form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('comment-name').value.trim();
+                    const text = document.getElementById('comment-text').value.trim();
+                    
+                    if (name && text) {
+                        const commentsContainer = document.getElementById('comments-container');
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.innerHTML = `
+                            <div class="comment-header">
+                                <strong>${name}</strong>
+                                <span>Just now</span>
+                            </div>
+                            <div class="comment-body">
+                                <p>${text}</p>
+                            </div>
+                        `;
+                        
+                        commentsContainer.prepend(commentElement);
+                        commentForm.reset();
+                        
+                        // In a real app, you would send this to your backend
+                        // fetch('/api/comments', { method: 'POST', body: JSON.stringify({ postId, name, text }) })
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

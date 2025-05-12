@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Jole Blog</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">Jole Blog</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html" class="active">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <section class="about-section">
+            <h1>Our Story</h1>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./images/workspace.jpeg" alt="Our workspace" onerror="this.src='https://via.placeholder.com/800x500?text=Workspace'">
+                </div>
+                <div class="about-text">
+                    <p>Welcome to Jole Blog, where passion meets technology. Founded in 2024, we're dedicated to bringing you the latest insights in web development and design.</p>
+                    <p>Our team consists of industry professionals with over 5+ years of combined experience in creating digital experiences that matter.</p>
+                    <div class="mission">
+                        <h2>Our Mission</h2>
+                        <p>To simplify complex tech concepts through clear, practical articles that help developers of all levels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet The Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="./images/levis.jpeg" alt="Levis Rabah" onerror="this.src='https://via.placeholder.com/300x300?text=Levis+Rabah'">
+                    <h3>Levis Rabah</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./images/stacy.jpeg" alt="Lilian Arien" onerror="this.src='https://via.placeholder.com/300x300?text=Lilian+Arien'">
+                    <h3>Stayce Auma</h3>
+                    <p>Content Strategist</p>
+                </div>
+                <div class="team-member">
+                    <img src="./images/dev.jpeg" alt="Michael Brown" onerror="this.src='https://via.placeholder.com/300x300?text=Michael+Brown'">
+                    <h3>Michael Brown</h3>
+                    <p>UX Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./images/whitney.jpeg" alt="Michael Brown" onerror="this.src='https://via.placeholder.com/300x300?text=Michael+Brown'">
+                    <h3>Whitney Rashel</h3>
+                    <p>Social Media Manager</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Jole Blog. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://x.com/Eng_Levis?t=3G3wMtqJldUuUtHSH6ymfg&s=08" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/levis-rabah-8242a6304" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/levisrabah" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load utils.js -->
+    <script src="./js/utils.js"></script>
+    <script>
+        // Initialize theme toggle when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if blogUtils is available
+            if (typeof blogUtils !== 'undefined' && blogUtils.setupThemeToggle) {
+                blogUtils.setupThemeToggle();
+            } else {
+                console.error('Theme toggle functionality not loaded');
+                // Fallback: Add basic theme toggle
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', function() {
+                        const currentTheme = document.documentElement.getAttribute('data-theme');
+                        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                        document.documentElement.setAttribute('data-theme', newTheme);
+                        localStorage.setItem('theme', newTheme);
+                        const icon = this.querySelector('i');
+                        if (newTheme === 'dark') {
+                            icon.classList.replace('fa-moon', 'fa-sun');
+                        } else {
+                            icon.classList.replace('fa-sun', 'fa-moon');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

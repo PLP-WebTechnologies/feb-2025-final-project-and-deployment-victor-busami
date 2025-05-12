@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Jole Blog</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">Jole Blog</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-section">
+            <h1>Get In Touch</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>40503 Tech Street, Nairobi - Kenya</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+254 795-982-921</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@joleblog.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://x.com/Eng_Levis?t=3G3wMtqJldUuUtHSH6ymfg&s=08" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="www.linkedin.com/in/levis-rabah-8242a6304
+        
+                        " aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/levisrabah" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Jole Blog. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://x.com/Eng_Levis?t=3G3wMtqJldUuUtHSH6ymfg&s=08" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com/in/levis-rabah-8242a6304
+
+                " aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/levisrabah" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script>
+        // Simple form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Theme toggle functionality
+        function setupThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (!themeToggle) return;
+            
+            const icon = themeToggle.querySelector('i');
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            if (savedTheme === 'dark') {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                if (newTheme === 'dark') {
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    icon.classList.replace('fa-sun', 'fa-moon');
+                }
+            });
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', setupThemeToggle);
+    </script>
+</body>
+</html>

@@ -3,9 +3,11 @@
 # Project Documentation: Multi-Page Responsive Website
 
 ## Project Title:
+
 Modern Multi-Page Responsive Website
 
 ## Author:
+
 Busami Kisanya
 
 [GitHub or Deployment Link]
@@ -13,11 +15,13 @@ Busami Kisanya
 ---
 
 ## 1. Project Overview
+
 This project is a fully functional, responsive multi-page website developed using modern web technologies: **HTML5**, **CSS3**, and **JavaScript**. The aim was to design a clean and accessible site that demonstrates strong foundational front-end skills, interactivity, and responsive behavior across devices.
 
 ---
 
 ## 2. Objectives
+
 - Build a fully functional web application.
 - Apply HTML, CSS, and JavaScript concepts learned.
 - Design a multi-page website with clear navigation and responsive design.
@@ -29,11 +33,14 @@ This project is a fully functional, responsive multi-page website developed usin
 ---
 
 ## 3. Instructions
+
 Choose one of the following project ideas:
+
 - Blog Website: Implement a multi-page site with navigation.
 - Ecommerce Website: Implement a multi-page site with navigation.
 
 > **NOTE:**
+>
 > - Include at least:
 >   - A responsive design.
 >   - JavaScript interactivity.
@@ -42,6 +49,7 @@ Choose one of the following project ideas:
 ---
 
 ## 4. Tasks
+
 - Create a well-structured HTML5 document.
 - Use at least 5 different HTML elements.
 - Ensure semantic correctness.
@@ -49,6 +57,7 @@ Choose one of the following project ideas:
 ---
 
 ## 5. Technologies Used
+
 | Technology                      | Purpose                                                  |
 | ------------------------------- | -------------------------------------------------------- |
 | HTML5                           | Structure and semantic layout of pages                   |
@@ -60,6 +69,7 @@ Choose one of the following project ideas:
 ---
 
 ## 6. Pages Overview
+
 1. **Home Page**
    - Brief introduction
    - Responsive navigation bar
@@ -74,6 +84,7 @@ Choose one of the following project ideas:
 ---
 
 ## 7. Key Features
+
 - ✅ Responsive design for mobile, tablet, and desktop
 - ✅ Semantic HTML for accessibility
 - ✅ Smooth navigation between pages
@@ -83,12 +94,14 @@ Choose one of the following project ideas:
 ---
 
 ## 8. Deployment
+
 The website was deployed using **[GitHub Pages / Netlify / Vercel]**.  
 **Live URL:** [https://your-live-link.com](https://your-live-link.com)
 
 ---
 
 ## 9. File Structure
+
 ```
 /project-root
 │
@@ -106,6 +119,7 @@ The website was deployed using **[GitHub Pages / Netlify / Vercel]**.
 ---
 
 ## 10. Challenges & Learnings
+
 - Gained experience with responsive layout using media queries.
 - Improved skills in structuring clean and semantic HTML.
 - Strengthened understanding of DOM manipulation in JavaScript.

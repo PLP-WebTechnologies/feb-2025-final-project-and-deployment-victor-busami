@@ -10,7 +10,7 @@ Modern Multi-Page Responsive Website
 
 Busami Kisanya
 
-[GitHub or Deployment Link]
+[Live Website (GitHub Pages)](https://plp-webtechnologies.github.io/feb-2025-final-project-and-deployment-victor-busami/)
 
 ---
 

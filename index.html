@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Doe Blog</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="A premium blog about web development and design">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta
+      name="description"
+      content="A premium blog about web development and design"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="nav-brand">John Doe Blog</div>
-            <ul class="nav-links">
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search posts..." aria-label="Search posts">
-                    <button id="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </nav>
+      <nav>
+        <div class="nav-brand">Verdant Blog</div>
+        <ul class="nav-links">
+          <li><a href="./index.html" class="active">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search posts..."
+              aria-label="Search posts"
+            />
+            <button id="search-btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="search-results" id="search-results" hidden aria-live="polite">
-            <h2>Search Results</h2>
-            <div class="results-grid" id="results-container"></div>
-            <button id="clear-search" class="btn-secondary">Clear Search</button>
-        </section>
+      <section
+        class="search-results"
+        id="search-results"
+        hidden
+        aria-live="polite"
+      >
+        <h2>Search Results</h2>
+        <div class="results-grid" id="results-container"></div>
+        <button id="clear-search" class="btn-secondary">Clear Search</button>
+      </section>
 
-        <section class="featured-post" aria-labelledby="featured-post-heading">
-            <h2 id="featured-post-heading" class="visually-hidden">Featured Post</h2>
-            <!-- Featured post will be loaded dynamically -->
-        </section>
+      <section class="featured-post" aria-labelledby="featured-post-heading">
+        <h2 id="featured-post-heading" class="visually-hidden">
+          Featured Post
+        </h2>
+        <!-- Featured post will be loaded dynamically -->
+      </section>
 
-        <section class="recent-posts" aria-labelledby="recent-posts-heading">
-            <h2 id="recent-posts-heading">Latest Articles</h2>
-            <div class="post-grid" id="post-container" role="list"></div>
-            <div class="pagination" id="pagination" aria-label="Pagination"></div>
-        </section>
+      <section class="recent-posts" aria-labelledby="recent-posts-heading">
+        <h2 id="recent-posts-heading">Latest Articles</h2>
+        <div class="post-grid" id="post-container" role="list"></div>
+        <div class="pagination" id="pagination" aria-label="Pagination"></div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 John Doe Blog. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://github.com/victor-busami" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
+      <div class="footer-content">
+        <p>&copy; 2025 Verdant Blog. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://github.com/victor-busami" aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
         </div>
+      </div>
     </footer>
 
     <!-- Loading order is critical -->
@@ -64,9 +86,9 @@
 
     <!-- Fallback for older browsers -->
     <script>
-        if (typeof blogUtils === 'undefined') {
-            document.write('<script src="./js/legacy.js"><\/script>');
-        }
+      if (typeof blogUtils === "undefined") {
+        document.write('<script src="./js/legacy.js"><\/script>');
+      }
     </script>
-</body>
+  </body>
 </html>

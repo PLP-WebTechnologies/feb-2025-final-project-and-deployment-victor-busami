@@ -11,6 +11,7 @@ Modern Multi-Page Responsive Website
 Busami Kisanya
 
 [GitHub or Deployment Link]
+https://plp-webtechnologies.github.io/feb-2025-final-project-and-deployment-victor-busami/
 
 ---
 
@@ -64,7 +65,7 @@ Choose one of the following project ideas:
 | CSS3                            | Styling, layout, and media queries for responsiveness    |
 | JavaScript                      | Form validation, interactive elements like image sliders |
 | Git                             | Version control                                          |
-| GitHub Pages / Netlify / Vercel | Deployment                                               |
+| GitHub Pages  | Deployment                                               |
 
 ---
 
@@ -95,8 +96,8 @@ Choose one of the following project ideas:
 
 ## 8. Deployment
 
-The website was deployed using **[GitHub Pages / Netlify / Vercel]**.  
-**Live URL:** [https://your-live-link.com](https://your-live-link.com)
+The website was deployed using **[GitHub Pages]**.  
+**Live URL:**[https://plp-webtechnologies.github.io/feb-2025-final-project-and-deployment-victor-busami/]
 
 ---
 
@@ -123,7 +124,7 @@ The website was deployed using **[GitHub Pages / Netlify / Vercel]**.
 - Gained experience with responsive layout using media queries.
 - Improved skills in structuring clean and semantic HTML.
 - Strengthened understanding of DOM manipulation in JavaScript.
-- Learned how to deploy and troubleshoot deployment on [hosting platform].
+- Learned how to deploy and troubleshoot deployment on [github pages].
 
 ---
 

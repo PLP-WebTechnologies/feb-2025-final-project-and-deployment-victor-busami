@@ -216,6 +216,83 @@ main {
   color: var(--bg-color);
   border-color: var(--primary-color);
 }
+.comments-section {
+  margin: 3rem 0;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  border: 1.5px solid var(--border-color);
+}
+.comment-form {
+  background: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(78, 110, 88, 0.07);
+  border: 1px solid var(--border-color);
+}
+.comment-form .form-group {
+  margin-bottom: 1.2rem;
+}
+.comment-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+.comment-form button.btn-primary {
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.comment-form button.btn-primary:hover {
+  background: var(--secondary-color);
+  color: var(--bg-color);
+}
+.comments-list {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.2rem;
+}
+.comment {
+  background: var(--accent-color);
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(78, 110, 88, 0.06);
+  border: 1px solid var(--border-color);
+}
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+}
+.comment-header strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+.comment-body p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
 footer {
   background: var(--secondary-color);
   color: var(--bg-color);
@@ -287,5 +364,14 @@ footer {
   .contact-section,
   .team-section {
     padding: 1.2rem 0.5rem;
+  }
+  .comments-section {
+    padding: 1rem 0.3rem;
+  }
+  .comment-form {
+    padding: 1rem 0.3rem;
+  }
+  .comment {
+    padding: 0.8rem 0.5rem;
   }
 }

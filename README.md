@@ -126,6 +126,4 @@ The website was deployed using **[GitHub Pages]**.
 - Strengthened understanding of DOM manipulation in JavaScript.
 - Learned how to deploy and troubleshoot deployment on [github pages].
 
----
 
-Good luck and happy coding! 🚀💻
